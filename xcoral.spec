@@ -41,13 +41,11 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
 	installprefix=$RPM_BUILD_ROOT \
 	XC_LIBDIR=%{_datadir}/%{name}
 
-gzip -9nf IAFA-PACKAGE
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Doc/HTML IAFA-PACKAGE.gz
+%doc Doc/HTML IAFA-PACKAGE
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}
