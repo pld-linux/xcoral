@@ -10,7 +10,7 @@ Source:		ftp://ftp.x.org/contrib/editors/%{name}-%{version}.tar.gz
 Patch0:		xcoral-misc.patch
 Patch1:		xcoral-loop.patch
 BuildRequires:	XFree86-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 
