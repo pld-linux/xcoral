@@ -38,6 +38,8 @@ install -d $RPM_BUILD_ROOT/usr/X11R6/{bin,share/xcoral}
 make installprefix=$RPM_BUILD_ROOT \
 	XC_LIBDIR=/usr/X11R6/share/xcoral install
 
+strip $RPM_BUILD_ROOT/usr/X11R6/bin/xcoral
+
 gzip -9nf IAFA-PACKAGE
 
 %clean
