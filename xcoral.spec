@@ -6,6 +6,7 @@ Release:	6
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	ftp://ftp.x.org/contrib/editors/%{name}-%{version}.tar.gz
+# Source0-md5:	668fe3d0ef52f3677cd6cc8b52feaa2e
 Patch0:		%{name}-misc.patch
 Patch1:		%{name}-loop.patch
 BuildRequires:	XFree86-devel
