@@ -5,10 +5,11 @@ Version:	3.2
 Release:	6
 License:	GPL
 Group:		X11/Applications/Editors
-Source0:	ftp://ftp.x.org/contrib/editors/%{name}-%{version}.tar.gz
+Source0:	http://xcoral.free.fr/%{name}-%{version}.tar.gz
 # Source0-md5:	668fe3d0ef52f3677cd6cc8b52feaa2e
 Patch0:		%{name}-misc.patch
 Patch1:		%{name}-loop.patch
+URL:		http://xcoral.free.fr/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
