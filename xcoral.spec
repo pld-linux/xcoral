@@ -1,14 +1,16 @@
 Summary:	Xcoral Editor
-Summary(pl):	Xcoral - edytor tekstów pracuj±cy w ¶rodowisku X-ów
+Summary(pl):	Xcoral - edytor tekstów pracuj±cy w ¶rodowisku X
 Name:		xcoral
 Version:	3.2
 Release:	6
 License:	GPL
 Group:		X11/Applications/Editors
+Group(de):	X11/Applikationen/Editors
 Group(pl):	X11/Aplikacje/Edytory
+Group(pt):	X11/Aplicações/Editores
 Source0:	ftp://ftp.x.org/contrib/editors/%{name}-%{version}.tar.gz
-Patch0:		xcoral-misc.patch
-Patch1:		xcoral-loop.patch
+Patch0:		%{name}-misc.patch
+Patch1:		%{name}-loop.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -20,7 +22,7 @@ System. A built-in browser enables you to navigate through C
 functions, C++ classes, methods and files.
 
 %description -l pl
-Xcoral wielookienkowy tekstowy edytor bazuj±cy na obs³udze myszki.
+Xcoral to wielookienkowy tekstowy edytor bazuj±cy na obs³udze myszki.
 Posiada wbudowane mechanizmy pozwalaj±ce w sposób wyra¼ny rozgraniczyæ
 tworzony tekst.
 
