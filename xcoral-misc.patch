@@ -1,0 +1,39 @@
+--- Makefile.in
++++ Makefile.in	1998/12/10 16:59:37
+@@ -6,6 +6,8 @@
+ X_BINDIR     = @bindir@
+ XC_LIBDIR    = @libdir@/xcoral
+ 
++installprefix=
++
+ CC           = @CC@
+ INSTALL      = @INSTALL@
+ BISON        = @BISON@
+@@ -78,11 +80,12 @@
+ 	$(CC) -g -o $(PROGRAM) $(OBJS) $(SMACOBJS) $(LDOPTIONS) $(LDLIBS)
+ 
+ install: $(PROGRAM) $(MISCFILES)
+-	- mkdir $(X_BINDIR)
+-	$(INSTALL) $(PROGRAM) $(X_BINDIR)
+-	- mkdir ${exec_prefix}/lib $(XC_LIBDIR)
++	- mkdir $(installprefix)/$(X_BINDIR)
++	$(INSTALL) $(PROGRAM) $(installprefix)/$(X_BINDIR)
++	- mkdir $(installprefix)/${exec_prefix}/lib 
++	- mkdir $(installprefix)/$(XC_LIBDIR)
+ 	for i in $(MISCFILES); do \
+-	(set -x;$(INSTALL) $$i $(XC_LIBDIR) );\
++	(set -x;$(INSTALL) $$i $(installprefix)/$(XC_LIBDIR) );\
+ 	done
+ 
+ 
+--- mode.c
++++ mode.c	1998/08/24 17:13:12
+@@ -635,7 +635,7 @@
+     mode -> key [CtrV].func = ie_WR_next_page;
+     mode -> key [CtrW].func = ie_WR_kill_region;
+     mode -> key [CtrY].func =  ie_WR_yank;
+-    mode -> key [DELETE].func = ie_WR_delete;
++    mode -> key [DELETE].func = ie_WR_delete_char;
+ 
+     mode -> key [Ctr_sp].type = BUILTIN_FUNC; 
+     mode -> key [CtrA].type = BUILTIN_FUNC; 
