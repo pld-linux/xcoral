@@ -42,8 +42,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
 	installprefix=$RPM_BUILD_ROOT \
 	XC_LIBDIR=%{_datadir}/%{name}
 
-strip $RPM_BUILD_ROOT%{_bindir}/%{name}
-
 gzip -9nf IAFA-PACKAGE
 
 %clean
