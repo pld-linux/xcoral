@@ -32,13 +32,13 @@ tworzony tekst.
 %build
 %configure
 
-make XC_LIBDIR=%{_datadir}/%{name} 
+%{__make} XC_LIBDIR=%{_datadir}/%{name} 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
 
-make install \
+%{__make} install \
 	installprefix=$RPM_BUILD_ROOT \
 	XC_LIBDIR=%{_datadir}/%{name}
 
