@@ -1,15 +1,14 @@
 Summary:	Xcoral Editor
 Summary(pl):	Xcoral - edytor tekstów pracuj±cy w ¶rodowisku X
 Name:		xcoral
-Version:	3.2
-Release:	6
+Version:	3.42b
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Editors
 #Source0Download: http://xcoral.free.fr/download.html
 Source0:	http://xcoral.free.fr/%{name}-%{version}.tar.gz
-# Source0-md5:	668fe3d0ef52f3677cd6cc8b52feaa2e
+# Source0-md5:	070249fb6ba8eb37014a78d487d7e517
 Patch0:		%{name}-misc.patch
-Patch1:		%{name}-loop.patch
 URL:		http://xcoral.free.fr/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,7 +28,6 @@ tworzony tekst.
 %prep
 %setup -q
 %patch0 -p0
-%patch1 -p0
 
 %build
 %configure2_13
