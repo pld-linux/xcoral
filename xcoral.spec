@@ -12,7 +12,7 @@ Patch1:		xcoral-loop.patch
 BuildPrereq:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
-%define	_prefix		/usr/X11R6
+%define	_prefix	/usr/X11R6
 
 %description
 Xcoral is a multiwindow mouse-based text editor for the XWindow System. A
@@ -37,8 +37,9 @@ make XC_LIBDIR=%{_datadir}/%{name}
 %install
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
 
-make installprefix=$RPM_BUILD_ROOT \
-	XC_LIBDIR=%{_datadir}/%{name} install
+make install \
+	installprefix=$RPM_BUILD_ROOT \
+	XC_LIBDIR=%{_datadir}/%{name}
 
 strip $RPM_BUILD_ROOT%{_bindir}/%{name}
 
@@ -54,27 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 
 %changelog
-* Sat May 15 1999 Piotr Czerwiñski <pius@pld.org.pl>
+* Thu May 20 1999 Piotr Czerwiñski <pius@pld.org.pl> 
   [3.2-6]
-- fixed Group(pl),
-- added xcoral-{misc,loop}.patch,
-- added BuildPrereq rules,
-- simplifications in %install,
-- added gzipping documentation,
-- modified %doc section,
-- cosmetic changes for common l&f,
-- recompiled on rpm 3,
-- package is FHS 2.0 compliant.
-
-* Wed Jan 12 1999 Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>
-- updating to version 3.2.
-
-* Mon Dec 07 1998 Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>
-- adding pl translation.
-
-* Wed Aug  5 1998 Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>
-- compiling with glibc2,
-- added glibc patch.
-
-* Wed Apr 29 1998 Wojciech "Sas" Ciåciwa <cieciwa@alpha.zarz.agh.edu.pl>
-- Buildroot added
+- package is FHS 2.0 compliant,
+- spec file written by Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>.
