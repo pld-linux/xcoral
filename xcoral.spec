@@ -9,7 +9,7 @@ Group(pl):	X11/Aplikacje/Edytory
 Source:		ftp://ftp.x.org/contrib/editors/%{name}-%{version}.tar.gz
 Patch0:		xcoral-misc.patch
 Patch1:		xcoral-loop.patch
-BuildPrereq:	XFree86-devel
+BuildRequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define	_prefix	/usr/X11R6
