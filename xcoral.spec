@@ -5,6 +5,7 @@ Version:	3.2
 Release:	6
 License:	GPL
 Group:		X11/Applications/Editors
+#Source0Download: http://xcoral.free.fr/download.html
 Source0:	http://xcoral.free.fr/%{name}-%{version}.tar.gz
 # Source0-md5:	668fe3d0ef52f3677cd6cc8b52feaa2e
 Patch0:		%{name}-misc.patch
@@ -33,7 +34,8 @@ tworzony tekst.
 %build
 %configure2_13
 
-%{__make} XC_LIBDIR=%{_datadir}/%{name}
+%{__make} \
+	XC_LIBDIR=%{_datadir}/%{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
