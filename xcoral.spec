@@ -12,7 +12,7 @@ Patch1:		xcoral-loop.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
-%define	_prefix	/usr/X11R6
+%define		_prefix		/usr/X11R6
 
 %description
 Xcoral is a multiwindow mouse-based text editor for the XWindow System. A
