@@ -2,12 +2,15 @@ Summary:	Xcoral Editor
 Summary(pl):    Xcoral - edytor tekstów pracuj±cy w ¶rodowisku X-ów.
 Name:		xcoral
 Version:	3.2
-Release:	1
+Release:	6
 Copyright:	GPL
 Group:		X11/Applications/Editors
-Group(pl):	X11/Aplikacje/Edycja
-Source:		ftp://ftp.x.org/contrib/editors/xcoral-%{PACKAGE_VERSION}.tar.gz
-BuildRoot:	/tmp/%name-%version-root
+Group(pl):	X11/Aplikacje/Edytory
+Source:		ftp://ftp.x.org/contrib/editors/%{name}-%{version}.tar.gz
+Patch0:		xcoral-misc.patch
+Patch1:		xcoral-loop.patch
+BuildPrereq:	XFree86-devel
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 Xcoral is a multiwindow mouse-based text editor for the XWindow System. A
@@ -21,38 +24,44 @@ tworzony tekst.
 
 %prep
 %setup -q
+%patch0 -p0
+%patch1 -p0
 
 %build
 %configure --prefix=/usr/X11R6
+
 make XC_LIBDIR=/usr/X11R6/share/xcoral 
 
 %install
-install -d  $RPM_BUILD_ROOT/usr/X11R6/{bin,share/xcoral}
-install -s xcoral $RPM_BUILD_ROOT/usr/X11R6/bin
-for i in SmacLib/DEPEND SmacLib/README SmacLib/hanoi.sc SmacLib/cmd.sc\
- SmacLib/color.sc SmacLib/comments.sc SmacLib/compare-win.sc\
- SmacLib/complete-word.sc SmacLib/describe.sc SmacLib/edir.sc\
- SmacLib/edt.sc SmacLib/example.sc SmacLib/french.sc SmacLib/hack-filename.sc\
- SmacLib/head.sc SmacLib/html.sc SmacLib/java.sc SmacLib/keydef-ext.sc\
- SmacLib/latex-macros.sc SmacLib/latex.sc SmacLib/man.dtex\
- SmacLib/misc-commands.sc SmacLib/mode-ext.sc SmacLib/mode.sc\
- SmacLib/mouse.sc SmacLib/rcs.sc SmacLib/save.sc SmacLib/sun-keydef.sc\
- SmacLib/title.sc SmacLib/top-ten.sc SmacLib/utilities.sc SmacLib/version.sc\
- SmacLib/window-utilities.sc SmacLib/xcoralrc.lf; do \
-(install  $i $RPM_BUILD_ROOT/usr/X11R6/share/xcoral );\
-done
+install -d $RPM_BUILD_ROOT/usr/X11R6/{bin,share/xcoral}
 
-%files
-%defattr(644, root, root, 755)
-%doc Doc/* README
-/usr/X11R6/share/xcoral
-%attr(755, root, root)/usr/X11R6/bin/xcoral
+make installprefix=$RPM_BUILD_ROOT \
+	XC_LIBDIR=/usr/X11R6/share/xcoral install
+
+gzip -9nf IAFA-PACKAGE
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-rm -rf $RPM_BUILD_DIR/%name-%version
+
+%files
+%defattr(644,root,root,755)
+%doc Doc/HTML IAFA-PACKAGE.gz
+%attr(755,root,root) /usr/X11R6/bin/xcoral
+/usr/X11R6/share/xcoral
 
 %changelog
+* Sat May 15 1999 Piotr Czerwiñski <pius@pld.org.pl>
+  [3.2-6]
+- fixed Group(pl),
+- added xcoral-{misc,loop}.patch,
+- added BuildPrereq rules,
+- simplifications in %install,
+- added gzipping documentation,
+- modified %doc section,
+- cosmetic changes for common l&f,
+- recompiled on rpm 3,
+- package is FHS 2.0 compliant.
+
 * Wed Jan 12 1999 Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>
 - updating to version 3.2.
 
