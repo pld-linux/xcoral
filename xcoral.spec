@@ -30,7 +30,7 @@ tworzony tekst.
 %patch1 -p0
 
 %build
-%configure
+%configure2_13
 
 %{__make} XC_LIBDIR=%{_datadir}/%{name} 
 
