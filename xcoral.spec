@@ -13,8 +13,6 @@ URL:		http://xcoral.free.fr/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-
 %description
 Xcoral is a multiwindow mouse-based text editor for the XWindow
 System. A built-in browser enables you to navigate through C
