@@ -23,7 +23,7 @@ tworzony tekst.
 %setup -q
 
 %build
-./configure --prefix=/usr/X11R6
+%configure --prefix=/usr/X11R6
 make XC_LIBDIR=/usr/X11R6/share/xcoral 
 
 %install
