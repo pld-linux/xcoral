@@ -26,14 +26,3 @@
  	done
  
  
---- mode.c
-+++ mode.c	1998/08/24 17:13:12
-@@ -635,7 +635,7 @@
-     mode -> key [CtrV].func = ie_WR_next_page;
-     mode -> key [CtrW].func = ie_WR_kill_region;
-     mode -> key [CtrY].func =  ie_WR_yank;
--    mode -> key [DELETE].func = ie_WR_delete;
-+    mode -> key [DELETE].func = ie_WR_delete_char;
- 
-     mode -> key [Ctr_sp].type = BUILTIN_FUNC; 
-     mode -> key [CtrA].type = BUILTIN_FUNC; 
