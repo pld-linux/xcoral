@@ -2,7 +2,7 @@ Summary:	Xcoral Editor
 Summary(pl):	Xcoral - edytor tekstów pracuj±cy w ¶rodowisku X
 Name:		xcoral
 Version:	3.42b
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 #Source0Download: http://xcoral.free.fr/download.html
@@ -48,6 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Doc/HTML IAFA-PACKAGE
+%doc Doc/*.ps IAFA-PACKAGE
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}
