@@ -12,6 +12,8 @@ Patch1:		xcoral-loop.patch
 BuildPrereq:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
+%define	_prefix		/usr/X11R6
+
 %description
 Xcoral is a multiwindow mouse-based text editor for the XWindow System. A
 built-in browser enables you to navigate through C functions, C++ classes,
@@ -28,17 +30,17 @@ tworzony tekst.
 %patch1 -p0
 
 %build
-%configure --prefix=/usr/X11R6
+%configure
 
-make XC_LIBDIR=/usr/X11R6/share/xcoral 
+make XC_LIBDIR=%{_datadir}/%{name} 
 
 %install
-install -d $RPM_BUILD_ROOT/usr/X11R6/{bin,share/xcoral}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
 
 make installprefix=$RPM_BUILD_ROOT \
-	XC_LIBDIR=/usr/X11R6/share/xcoral install
+	XC_LIBDIR=%{_datadir}/%{name} install
 
-strip $RPM_BUILD_ROOT/usr/X11R6/bin/xcoral
+strip $RPM_BUILD_ROOT%{_bindir}/%{name}
 
 gzip -9nf IAFA-PACKAGE
 
@@ -48,8 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Doc/HTML IAFA-PACKAGE.gz
-%attr(755,root,root) /usr/X11R6/bin/xcoral
-/usr/X11R6/share/xcoral
+%attr(755,root,root) %{_bindir}/%{name}
+%{_datadir}/%{name}
 
 %changelog
 * Sat May 15 1999 Piotr Czerwiñski <pius@pld.org.pl>
