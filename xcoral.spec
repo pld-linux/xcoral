@@ -31,7 +31,7 @@ tworzony tekst.
 %build
 %configure2_13
 
-%{__make} XC_LIBDIR=%{_datadir}/%{name} 
+%{__make} XC_LIBDIR=%{_datadir}/%{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
