@@ -53,9 +53,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc Doc/HTML IAFA-PACKAGE.gz
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}
-
-%changelog
-* Thu May 20 1999 Piotr Czerwiñski <pius@pld.org.pl> 
-  [3.2-6]
-- package is FHS 2.0 compliant,
-- spec file written by Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>.
