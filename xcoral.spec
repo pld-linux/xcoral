@@ -1,5 +1,5 @@
 Summary:	Xcoral Editor
-Summary(pl):	Xcoral - edytor tekstów pracuj±cy w ¶rodowisku X
+Summary(pl.UTF-8):   Xcoral - edytor tekstÃ³w pracujÄ…cy w Å›rodowisku X
 Name:		xcoral
 Version:	3.42b
 Release:	2
@@ -18,9 +18,9 @@ Xcoral is a multiwindow mouse-based text editor for the XWindow
 System. A built-in browser enables you to navigate through C
 functions, C++ classes, methods and files.
 
-%description -l pl
-Xcoral to wielookienkowy tekstowy edytor bazuj±cy na obs³udze myszki.
-Posiada wbudowane mechanizmy pozwalaj±ce w sposób wyra¼ny rozgraniczyæ
+%description -l pl.UTF-8
+Xcoral to wielookienkowy tekstowy edytor bazujÄ…cy na obsÅ‚udze myszki.
+Posiada wbudowane mechanizmy pozwalajÄ…ce w sposÃ³b wyraÅºny rozgraniczyÄ‡
 tworzony tekst.
 
 %prep
