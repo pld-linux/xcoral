@@ -1,5 +1,5 @@
 Summary:	Xcoral Editor
-Summary(pl.UTF-8):   Xcoral - edytor tekstów pracujący w środowisku X
+Summary(pl.UTF-8):	Xcoral - edytor tekstów pracujący w środowisku X
 Name:		xcoral
 Version:	3.42b
 Release:	2
